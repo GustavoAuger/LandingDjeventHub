@@ -1,0 +1,50 @@
+.section {
+  height: 80vh; // Ocupa el 80% de la altura de la pantalla
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .section-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+
+    .section-image {
+      flex: 1;
+      padding: 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .section-code {
+      flex: 1;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      font-family: 'Courier New', monospace;
+      color: #333;
+      overflow-x: auto;
+
+      pre {
+        background: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
