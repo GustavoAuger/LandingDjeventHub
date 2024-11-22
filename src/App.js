@@ -23,22 +23,23 @@ function App() {
     {
       image: image2,
       codeSnippet: `<div>Fragmento de código 2</div>`,
-      gradientClass: 'white-background', // Fondo blanco
+      gradientClass: 'white-background', // Segundo fondo blanco
       reverse: true,
     },
     {
       image: image3,
       codeSnippet: `<div>Fragmento de código 3</div>`,
-      gradientClass: 'gradient2', // Segundo fondo con gradiente
+      gradientClass: 'gradient2', // Tercer fondo con gradiente
       reverse: false,
     },
     {
       image: image4,
       codeSnippet: `<div>Fragmento de código 4</div>`,
-      gradientClass: 'white-background', // Fondo blanco
+      gradientClass: 'white-background', // Cuarto fondo blanco
       reverse: true,
     },
   ];
+
   return (
     <div className="App">
       <Header />
