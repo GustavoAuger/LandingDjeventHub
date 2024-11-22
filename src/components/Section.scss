@@ -1,14 +1,47 @@
 .section {
-  height: 80vh; // Ocupa el 80% de la altura de la pantalla
+  position: relative;
+  height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
   background-size: cover;
   background-position: center;
+  
+  // Fondo blanco si no hay imagen (se activa en App.js)
+  &.white-background {
+    background-color: #ffffff; /* Fondo blanco */
+    background-image: none;
+  }
 
+  // Primer fondo con gradiente (azul a morado)
+  &.gradient1 {
+    background: linear-gradient(to right, #8b9eff, #a569b6); /* Gradiente azul a morado */
+  }
+
+  // Segundo fondo con gradiente (puedes elegir otro color de gradiente aquí)
+  &.gradient2 {
+    background: linear-gradient(to left, #8b9eff, #a569b6); /* Otro ejemplo de gradiente */
+  }
+
+  // Aplica un difuminado del fondo con un pseudo-elemento
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherita el fondo de la sección */
+    opacity: 0.2; /* Controla la opacidad del fondo */
+    z-index: -1;  /* Colocamos el fondo detrás del contenido */
+  }
+
+  // Si la sección tiene la clase reverse, invertimos el orden de los elementos
   &.reverse {
-    flex-direction: row-reverse;
+    .section-content {
+      flex-direction: row-reverse;
+    }
   }
 
   .section-content {
@@ -19,11 +52,12 @@
 
     .section-image {
       flex: 1;
-      padding: 20px;
+      padding: 10px;  /* Reducido el padding para evitar mucho margen */
 
       img {
-        width: 100%;
-        height: auto;
+        max-height: 500px;  /* Limita la altura máxima a 500px */
+        width: auto;        /* Mantiene la proporción del ancho */
+        height: auto;       /* Ajusta automáticamente la altura */
         border-radius: 10px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
@@ -45,6 +79,13 @@
         border-radius: 5px;
         font-size: 0.9rem;
       }
+    }
+  }
+
+  // Responsividad para pantallas pequeñas
+  @media (max-width: 768px) {
+    .section-content {
+      flex-direction: column;
     }
   }
 }
