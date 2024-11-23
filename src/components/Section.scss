@@ -1,30 +1,29 @@
 .section {
   position: relative;
-
+  display: flex; /* Flexbox para alinear imagen y texto */
   align-items: center;
   justify-content: center;
   background-size: cover;
   background-position: center;
   height: 60vh;
 
-  // Fondo blanco si no hay imagen (se activa en App.js)
+  // Fondo blanco si no hay imagen
   &.white-background {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
     background-image: none;
   }
 
-  // Primer fondo con gradiente (azul a morado)
+  // Gradiente azul a morado
   &.gradient1 {
-    background: linear-gradient(to top, #3f4ae0, #000000); /* Gradiente azul a morado */
-    background: linear;
+    background: linear-gradient(to top, #3f4ae0, #000000);
   }
 
-  // Segundo fondo con gradiente
+  // Gradiente azul a morado
   &.gradient2 {
-    background: linear-gradient(to top, #00a5bb, #030346); /* Gradiente azul a morado */
+    background: linear-gradient(to top, #00a5bb, #030346);
   }
 
-  // Aplica un difuminado del fondo con un pseudo-elemento
+  // Difuminado con pseudo-elemento
   &::before {
     content: '';
     position: absolute;
@@ -36,7 +35,7 @@
     z-index: -1;
   }
 
-  // Si la sección tiene la clase reverse, invertimos el orden de los elementos
+  // Invertir el contenido si es necesario
   &.reverse {
     .section-content {
       flex-direction: row-reverse;
@@ -48,40 +47,46 @@
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
+    position: relative;
+    padding: 0; /* Asegura que no haya padding adicional que desplace el contenido */
+    height: 100%; /* Asegura que el contenido ocupe todo el alto de la sección */
 
     .section-image {
+      position: relative;
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Asegura que la imagen se quede al fondo */
+      margin: 0; /* Evita márgenes extra */
+      height: 100%; /* Hace que ocupe el 100% de la altura de la sección */
+    }
 
-      position: relative; /* Necesario para superposición de imágenes */
+    .image-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; /* Alinea la imagen al fondo */
+      height: 100%;
+    }
 
-      // Contenedor para múltiples imágenes superpuestas
-      .image-wrapper {
-        position: relative;
+    /* Imagen cambiante */
+    .section-image-inside {
 
-        // Ajusta las imágenes superpuestas
-        img {
-          position: absolute;
-          top: 0;
+      height: auto;
+      object-fit: cover; /* Mantiene la imagen en su aspecto sin deformarse */
+      max-height: 100%; /* Permite que la imagen ocupe el 100% del contenedor */
+      z-index: 2; /* Imagen por encima del marco */
+    }
 
-          max-height: 60vh;
-          width: auto;
-          height: auto;
-          border-radius: 10px;
-          vertical-align: middle;
-        }
-
-        // Aseguramos que la primera imagen esté en el fondo
-        .image-0 {
-          z-index: 1;
-        }
-
-        // Las imágenes siguientes se superponen con mayor z-index
-        .image-1 {
-          z-index: 2;
-        }
-
-        // Puedes agregar más imágenes si es necesario
-      }
+    /* Marco fijo */
+    .marco {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      z-index: 4; /* Marco debajo de la imagen */
     }
 
     .section-code {

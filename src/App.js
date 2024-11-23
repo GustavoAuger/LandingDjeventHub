@@ -17,15 +17,25 @@ function App() {
   const images = [image1, image2, image3, image4]; // Arreglo de imágenes
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // Estado para la imagen actual
 
-  // Cambia la imagen cada 3 segundos
-  // UseEffect para cambiar la imagen cada 3 segundos
+  // Títulos y textos que acompañan las imágenes
+  const sectionContent = [
+    { title: "Imagen 1", text: "Este es un texto breve para la imagen 1." },
+    { title: "Imagen 2", text: "Este es un texto breve para la imagen 2." },
+    { title: "Imagen 3", text: "Este es un texto breve para la imagen 3." },
+    { title: "Imagen 4", text: "Este es un texto breve para la imagen 4." }
+  ];
+
+  // Cambia la imagen cada 5 segundos
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Cambia la imagen cada 3 segundos
+    }, 5000); // Cambia la imagen cada 5 segundos
 
     return () => clearInterval(intervalId); // Limpiar el intervalo cuando el componente se desmonte
   }, [images.length]); // Dependencia de images.length para evitar el warning
+
+  // Obtener el contenido (título y texto) de la imagen actual
+  const currentContent = sectionContent[currentImageIndex];
 
   const sectionsData = [
     {
@@ -34,6 +44,8 @@ function App() {
       codeSnippet: `Inicia sesión para acceder a un mundo de posibilidades...`,
       gradientClass: 'gradient1',
       reverse: false,
+      title: currentContent.title, // Título de la imagen actual
+      text: currentContent.text, // Texto de la imagen actual
     },
   ];
 
@@ -49,6 +61,8 @@ function App() {
           codeSnippet={section.codeSnippet}
           gradientClass={section.gradientClass}
           reverse={section.reverse}
+          title={section.title} // Título dinámico
+          text={section.text} // Texto dinámico
         />
       ))}
       <Features />

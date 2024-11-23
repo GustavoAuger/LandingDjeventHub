@@ -20,7 +20,7 @@ const HeroSection = () => {
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <h1> Coencta, con el mejor match para tu evento !!</h1>
+        <h1> El Match entre Dj y Productura </h1>
         <p>Conéctate con DJs, gestiona eventos y lleva la fiesta a otro nivel.</p>
 
         <div className={`functionalities ${isMobile ? 'mobile' : 'web'}`}>
