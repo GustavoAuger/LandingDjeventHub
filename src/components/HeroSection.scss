@@ -9,35 +9,11 @@
 
   .hero-content {
     text-align: center;
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
+    height: 100%;
 
     .functionalities {
-      margin-top: 20px;
-
-      strong {
-        font-size: 1.5rem;
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-        font-size: 1rem;
-
-        li {
-          margin-bottom: 10px;
-        }
-      }
+      vertical-align: bottom;
+      margin-top: 15%;
 
       .download-btn {
         padding: 15px 30px;

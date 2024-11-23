@@ -20,17 +20,11 @@ const HeroSection = () => {
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <h1> El Match entre Dj y Productura </h1>
-        <p>Conéctate con DJs, gestiona eventos y lleva la fiesta a otro nivel.</p>
+
 
         <div className={`functionalities ${isMobile ? 'mobile' : 'web'}`}>
-          <strong>Funcionalidades</strong>
-          <ul>
-            <li>🚀 Registro y Autenticación</li>
-            <li>📅 Gestión de Eventos</li>
-            <li>🌐 Navegación Intuitiva</li>
-          </ul>
-          
+
+         
           {/* Condicional para mostrar el botón o el QR */}
           {isMobile ? (
             <a href="https://me-qr.com/LrXwZZ8y" target="_blank" rel="noopener noreferrer">
@@ -39,7 +33,9 @@ const HeroSection = () => {
           ) : (
             <img src={qrCodeImage} alt="QR Code" className="qr-code" />
           )}
+        
         </div>
+        <h2>Conéctate, crea, gestiona y lleva el evento a otro nivel.</h2>
       </div>
     </section>
   );

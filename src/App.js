@@ -19,20 +19,48 @@ function App() {
 
   // Títulos y textos que acompañan las imágenes
   const sectionContent = [
-    { title: "Imagen 1", text: "Este es un texto breve para la imagen 1." },
-    { title: "Imagen 2", text: "Este es un texto breve para la imagen 2." },
-    { title: "Imagen 3", text: "Este es un texto breve para la imagen 3." },
-    { title: "Imagen 4", text: "Este es un texto breve para la imagen 4." }
+    {
+      title: "🎵 Unete en pocos segundos 🎵",
+      text: [
+        "•   Crea una cuenta en pocos segundos.",
+        "•   Elige entre Productora o DJ.",
+        "•   Conecta con otros dj o productoras."
+      ]
+    },
+    {
+      title: "🎧 Descubre tu perfil musical 🎧",
+      text: [
+        "•   Gestiona tu perfil, en sensillos pasos",
+        "•   Hazte visible, impulsa tu correra como DJ o Productra",
+        "•   Marca tendencia con tus BPM."
+      ]
+    },
+    {
+      title: "🎶 Visualiza eventos 🎶",
+      text: [
+        "•   Explora eventos actuales",
+        "•   Únete o crea eventos exclusivos.",
+        "•   Conecta al más puro estilo"
+      ]
+    },
+    {
+      title: "🎤 Pública tu evento 🎤",
+      text: [
+        "•   Organiza tu evento",
+        "•   Gestiona, impulsa, y promueve.",
+        "•   Tú evento en el siguiente nivel."
+      ]
+    }
   ];
 
-  // Cambia la imagen cada 5 segundos
+  // Cambia la imagen y el contenido cada 5 segundos
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000); // Cambia la imagen cada 5 segundos
 
     return () => clearInterval(intervalId); // Limpiar el intervalo cuando el componente se desmonte
-  }, [images.length]); // Dependencia de images.length para evitar el warning
+  }, [images.length]);
 
   // Obtener el contenido (título y texto) de la imagen actual
   const currentContent = sectionContent[currentImageIndex];
@@ -41,7 +69,6 @@ function App() {
     {
       image: images[currentImageIndex], // La imagen actual que cambia
       marco: marco,  // Marco fijo
-      codeSnippet: `Inicia sesión para acceder a un mundo de posibilidades...`,
       gradientClass: 'gradient1',
       reverse: false,
       title: currentContent.title, // Título de la imagen actual

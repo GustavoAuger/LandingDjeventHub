@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap'); /* Importa la fuente */
+
+.title-psychodelic {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem; 
+  color: transparent;
+  text-align: center;
+  background: linear-gradient(45deg, #ff0080, #00ff80, #0048ff);
+  -webkit-background-clip: text; /* Clipa el fondo al texto */
+  background-clip: text; /* Clipa el fondo al texto */
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 0, 255, 0.5), 0 0 50px rgba(255, 0, 255, 0.3);
+  animation: psychedelic-effect 3s infinite;
+}
+
+@keyframes psychedelic-effect {
+  0% {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 0, 255, 0.5), 0 0 50px rgba(255, 0, 255, 0.3);
+  }
+  50% {
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 0, 255, 0.5), 0 0 50px rgba(255, 0, 255, 0.3);
+  }
+}
+
 .header{
   position:absolute;
   padding-bottom: 20px;

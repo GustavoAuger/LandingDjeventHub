@@ -14,10 +14,14 @@ const Section = ({ image, marco, codeSnippet, gradientClass, reverse, title, tex
           </div>
         </div>
         <div className="section-code">
-          {/* Mostrar el título y texto dinámicamente */}
-          <h2>{title}</h2>
-          <p>{text}</p>
-          <pre>{codeSnippet}</pre>
+          <div className="section-title">{title}</div>
+          <div className="section-text">
+            {text.map((point, index) => (
+              <div key={index} className="point">
+                {point}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -25,3 +29,4 @@ const Section = ({ image, marco, codeSnippet, gradientClass, reverse, title, tex
 };
 
 export default Section;
+
