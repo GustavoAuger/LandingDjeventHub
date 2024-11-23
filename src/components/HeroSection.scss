@@ -1,6 +1,10 @@
 .hero-section {
-  background-color: #2d2d2d; /* Fondo del Hero */
-  padding: 50px;
+
+  background-attachment:fixed;
+  background-image: url('../assets/images/imagen.jpg');
+  background-size: contain; 
+  height: 60vh;
+  padding-top: 200px;
   color: #fff;
 
   .hero-content {

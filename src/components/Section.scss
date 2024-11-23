@@ -1,13 +1,12 @@
 .section {
   position: relative;
-  height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
-  display: flex;
+
   align-items: center;
   justify-content: center;
-  padding: 40px;
   background-size: cover;
   background-position: center;
-  
+  height: 60vh;
+
   // Fondo blanco si no hay imagen (se activa en App.js)
   &.white-background {
     background-color: #ffffff; /* Fondo blanco */
@@ -16,12 +15,13 @@
 
   // Primer fondo con gradiente (azul a morado)
   &.gradient1 {
-    background: linear-gradient(to right, #8b9eff, #a569b6); /* Gradiente azul a morado */
+    background: linear-gradient(to top, #3f4ae0, #000000); /* Gradiente azul a morado */
+    background: linear;
   }
 
-  // Segundo fondo con gradiente (puedes elegir otro color de gradiente aquí)
+  // Segundo fondo con gradiente
   &.gradient2 {
-    background: linear-gradient(to left, #8b9eff, #a569b6); /* Otro ejemplo de gradiente */
+    background: linear-gradient(to top, #00a5bb, #030346); /* Gradiente azul a morado */
   }
 
   // Aplica un difuminado del fondo con un pseudo-elemento
@@ -32,9 +32,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: inherit; /* Inherita el fondo de la sección */
-    opacity: 0.2; /* Controla la opacidad del fondo */
-    z-index: -1;  /* Colocamos el fondo detrás del contenido */
+    background: inherit;
+    z-index: -1;
   }
 
   // Si la sección tiene la clase reverse, invertimos el orden de los elementos
@@ -52,36 +51,51 @@
 
     .section-image {
       flex: 1;
-      padding: 10px;  /* Reducido el padding para evitar mucho margen */
 
-      img {
-        max-height: 500px;  /* Limita la altura máxima a 500px */
-        width: auto;        /* Mantiene la proporción del ancho */
-        height: auto;       /* Ajusta automáticamente la altura */
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: relative; /* Necesario para superposición de imágenes */
+
+      // Contenedor para múltiples imágenes superpuestas
+      .image-wrapper {
+        position: relative;
+
+        // Ajusta las imágenes superpuestas
+        img {
+          position: absolute;
+          top: 0;
+
+          max-height: 60vh;
+          width: auto;
+          height: auto;
+          border-radius: 10px;
+          vertical-align: middle;
+        }
+
+        // Aseguramos que la primera imagen esté en el fondo
+        .image-0 {
+          z-index: 1;
+        }
+
+        // Las imágenes siguientes se superponen con mayor z-index
+        .image-1 {
+          z-index: 2;
+        }
+
+        // Puedes agregar más imágenes si es necesario
       }
     }
 
     .section-code {
       flex: 1;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       font-family: 'Courier New', monospace;
-      color: #333;
+      color: white;
       overflow-x: auto;
 
       pre {
-        background: #f5f5f5;
-        padding: 20px;
-        border-radius: 5px;
+        margin-top: 60px;
         font-size: 0.9rem;
       }
     }
   }
-
 
   // Responsividad para pantallas pequeñas
   @media (max-width: 768px) {
@@ -90,4 +104,3 @@
     }
   }
 }
-

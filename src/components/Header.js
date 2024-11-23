@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './Header.scss';
 const Header = () => {
   return (
-    <header style={{ padding: '20px', backgroundColor: '#282c34', color: 'white' }}>
-      <h1>DJ EVENT HUB</h1>
+    <header className="header">
+      <h1>Dj Event Hub</h1>
     </header>
   );
 };

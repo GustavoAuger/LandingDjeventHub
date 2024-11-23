@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Section from './components/Section';
@@ -7,36 +7,33 @@ import Footer from './components/Footer';
 import './components/App.scss';
 
 // Importa las imágenes desde la carpeta assets
-import image1 from './assets/images/image1.jpg';
-import image2 from './assets/images/image2.jpg';
-import image3 from './assets/images/image3.jpg';
-import image4 from './assets/images/image4.jpg';
+import marco from './assets/images/marco.png'; // Marco fijo
+import image1 from './assets/images/image1.png'; // Primera imagen
+import image2 from './assets/images/image2.png';  // Segunda imagen
+import image3 from './assets/images/image3.png';  // Tercera imagen
+import image4 from './assets/images/image4.png';  // Cuarta imagen
 
 function App() {
+  const images = [image1, image2, image3, image4]; // Arreglo de imágenes
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Estado para la imagen actual
+
+  // Cambia la imagen cada 3 segundos
+  // UseEffect para cambiar la imagen cada 3 segundos
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Cambia la imagen cada 3 segundos
+
+    return () => clearInterval(intervalId); // Limpiar el intervalo cuando el componente se desmonte
+  }, [images.length]); // Dependencia de images.length para evitar el warning
+
   const sectionsData = [
     {
-      image: image1,
-      codeSnippet: `<div>Fragmento de código 1</div>`,
-      gradientClass: 'gradient1', // Primer fondo con gradiente
+      image: images[currentImageIndex], // La imagen actual que cambia
+      marco: marco,  // Marco fijo
+      codeSnippet: `Inicia sesión para acceder a un mundo de posibilidades...`,
+      gradientClass: 'gradient1',
       reverse: false,
-    },
-    {
-      image: image2,
-      codeSnippet: `<div>Fragmento de código 2</div>`,
-      gradientClass: 'white-background', // Segundo fondo blanco
-      reverse: true,
-    },
-    {
-      image: image3,
-      codeSnippet: `<div>Fragmento de código 3</div>`,
-      gradientClass: 'gradient2', // Tercer fondo con gradiente
-      reverse: false,
-    },
-    {
-      image: image4,
-      codeSnippet: `<div>Fragmento de código 4</div>`,
-      gradientClass: 'white-background', // Cuarto fondo blanco
-      reverse: true,
     },
   ];
 
@@ -47,7 +44,8 @@ function App() {
       {sectionsData.map((section, index) => (
         <Section
           key={index}
-          image={section.image}
+          image={section.image} // Pasa la imagen que cambia
+          marco={section.marco} // El marco fijo
           codeSnippet={section.codeSnippet}
           gradientClass={section.gradientClass}
           reverse={section.reverse}
