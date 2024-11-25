@@ -8,10 +8,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     .footer-logo {
       margin-bottom: 20px;
+
       h2 {
         font-size: 2rem;
         font-weight: 700;
@@ -47,16 +48,26 @@
 
 // Responsividad para pantallas pequeñas
 @media (max-width: 768px) {
+  .footer {
+    padding: 20px 0; /* Reduce el padding para móviles */
+  }
+
   .footer-content {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     .footer-logo {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     .footer-social {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      gap: 10px; /* Reduce el espacio entre los iconos */
+    }
+
+    .footer-info {
+      font-size: 1rem; /* Aumenta un poco el tamaño de fuente */
     }
   }
 }

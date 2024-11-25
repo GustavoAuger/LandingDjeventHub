@@ -28,14 +28,15 @@ const HeroSection = () => {
           {/* Condicional para mostrar el botón o el QR */}
           {isMobile ? (
             <a href="https://me-qr.com/LrXwZZ8y" target="_blank" rel="noopener noreferrer">
-              <button className="download-btn">Descargar la app</button>
+              <button className="download-btn">Descargar</button>
             </a>
           ) : (
             <img src={qrCodeImage} alt="QR Code" className="qr-code" />
+            
           )}
         
         </div>
-        <h2>Conéctate, crea, gestiona y lleva el evento a otro nivel.</h2>
+        <h2>Descarga la app, y lleva el evento a otro nivel.</h2>
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ function App() {
       title: "🎧 Descubre tu perfil musical 🎧",
       text: [
         "•   Gestiona tu perfil, en sensillos pasos",
-        "•   Hazte visible, impulsa tu correra como DJ o Productra",
+        "•   Hazte visible, impulsa tu carrera como DJ o Productra",
         "•   Marca tendencia con tus BPM."
       ]
     },

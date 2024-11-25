@@ -7,39 +7,14 @@
   background-position: center;
   height: 60vh;
 
-  // Fondo blanco si no hay imagen
-  &.white-background {
-    background-color: #ffffff;
-    background-image: none;
-  }
-
-  // Gradiente azul a morado
+  // Gradiente 1
   &.gradient1 {
     background: linear-gradient(to top, #3f4ae0, #000000);
   }
 
-  // Gradiente azul a morado
+  // Gradiente 2
   &.gradient2 {
     background: linear-gradient(to top, #00a5bb, #030346);
-  }
-
-  // Difuminado con pseudo-elemento
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    z-index: -1;
-  }
-
-  // Invertir el contenido si es necesario
-  &.reverse {
-    .section-content {
-      flex-direction: row-reverse;
-    }
   }
 
   .section-content {
@@ -49,35 +24,32 @@
     max-width: 1600px;
     position: relative;
     padding: 0; 
-    height: 100%; /* Asegura que el contenido ocupe todo el alto de la sección */
+    height: 100%; 
 
     .section-image {
       position: relative;
       flex: 1;
       display: flex;
-      justify-content: flex-end; /* Asegura que la imagen se quede al fondo */
-      margin: 0; /* Evita márgenes extra */
-      height: 100%; /* Hace que ocupe el 100% de la altura de la sección */
+      justify-content: flex-end;
+      margin: 0;
+      height: 100%;
     }
 
     .image-wrapper {
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: flex-end; /* Alinea la imagen al fondo */
+      align-items: flex-end; 
       height: 100%;
     }
 
-    /* Imagen cambiante */
     .section-image-inside {
-
       height: auto;
-      object-fit: cover; /* Mantiene la imagen en su aspecto sin deformarse */
-      max-height: 100%; /* Permite que la imagen ocupe el 100% del contenedor */
-      z-index: 2; /* Imagen por encima del marco */
+      object-fit: cover; 
+      max-height: 100%; 
+      z-index: 2;
     }
 
-    /* Marco fijo */
     .marco {
       position: absolute;
       top: 0;
@@ -85,7 +57,7 @@
       width: 100%;
       height: 100%;
       border-radius: 10px;
-      z-index: 4; /* Marco debajo de la imagen */
+      z-index: 4;
     }
 
     .section-code {
@@ -93,21 +65,20 @@
       font-family: 'Poppins', sans-serif; 
       color: white;
       overflow-x: auto;
-      text-align: left; /* Alinea el texto a la izquierda */
-      
+      text-align: left; 
+
       .section-title {
-        font-size: 2.8rem; /* Ajustamos el tamaño del título */
+        font-size: 2.8rem;
         font-weight: bold;
-        line-height: 1.4; /* Mantiene el espaciado entre líneas del título */
-        margin-bottom: 55px; /* Ajustamos el margen debajo del título */
+        line-height: 1.4;
+        margin-bottom: 55px; 
         margin-top: 100px;
-     
       }
 
       .section-text {
-        font-size: 1.8rem; /* Reducimos el tamaño del texto */
-        line-height: 1.6; /* Aumentamos un poco el espaciado entre líneas */
-        margin-bottom: 18px; /* Ajustamos el margen entre puntos */
+        font-size: 1.8rem; 
+        line-height: 1.6; 
+        margin-bottom: 18px;
         margin-left: 80px;
       }
 
@@ -120,8 +91,31 @@
 
   // Responsividad para pantallas pequeñas
   @media (max-width: 768px) {
+    .section-image {
+      display: none !important;  // Ocultamos completamente la imagen en móvil y usamos !important
+    }
+
     .section-content {
-      flex-direction: column;
+      flex-direction: column !important;  // Aseguramos que los elementos se alineen en columna en móvil
+      height: auto !important;  // Evita que la sección ocupe demasiado espacio
+      padding: 0 !important;  // Elimina cualquier padding extra
+      margin-top: 0 !important;  // Elimina márgenes superiores
+    }
+    .section-text {
+      margin-left: 0px!important;
+    }
+    .section-code {
+      margin-left: 0 !important;  // Ajusta el margen de la sección de texto en móviles
+      text-align: center !important;  // Centra el texto
+    }
+
+    .section-title {
+      font-size: 1.8rem !important;  // Reducimos el tamaño del título
+      margin-top: 20px !important;  // Ajustamos el margen superior
+    }
+
+    .section-text {
+      font-size: 1.4rem !important;  // Reducimos el tamaño del texto
     }
   }
 }

@@ -41,3 +41,19 @@
   width: 100%;
   font-size: 30px;
 }
+
+// Media Query para dispositivos móviles
+@media (max-width: 768px) {
+  .title-psychodelic {
+    font-size: 1.3rem; // Reduce el tamaño de la fuente para móviles
+    letter-spacing: 0.5px; // Menos espacio entre letras
+    padding-top: 10px; // Ajuste del padding para móviles
+  }
+
+  .header {
+    padding-top: 15px; // Ajusta el padding para pantallas pequeñas
+    padding-bottom: 15px;
+    margin-bottom: 20px; // Reduce el margen inferior
+    font-size: 20px; // Reduce el tamaño de la fuente para móviles
+  }
+}

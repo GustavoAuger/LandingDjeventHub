@@ -1,21 +1,65 @@
+.features-section {
+  background: linear-gradient(to bottom, #1F0C47, #000000); // Fondo degradado oscuro
+  position: relative;
+  padding: 20px; // Espacio alrededor del contenido
+  color: white; // Texto en blanco para contraste
 
+  .features-container {
+    max-width: 800px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
 
-.gradient2 {
-    background: linear-gradient(to bottom, 	#1F0C47, #000000);
-    position: relative;
-    display: flex; /* Flexbox para alinear imagen y texto */
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-  
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2.2rem; // Título un poco más grande
+      color: #ffffff;
+      width: 100%;
+    }
 
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
-  // Responsividad para pantallas pequeñas
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 2rem; // Aumenta el interlineado
+        font-size: 1.3rem; // Tamaño de fuente más grande
+        color: #ffffff;
+        margin-bottom: 20px; // Espacio adicional entre cada línea
+
+        .feature-icon {
+          font-size: 1.8rem; // Tamaño del emoji
+          margin-right: 10px; // Espacio entre el emoji y el texto
+        }
+      }
+    }
+  }
+
+  // Media Query para pantallas pequeñas (móviles)
   @media (max-width: 768px) {
-    .section-content {
-      flex-direction: column;
+    .features-container {
+      margin-top: -10px!important;
+      padding: 0 10px; // Ajusta el padding para móviles
+      font-size: 1.1rem; // Ajusta un poco el tamaño de la fuente en móviles
+    }
+
+    h2 {
+      font-size: 1.4rem!important;; // Reduce el tamaño del título en pantallas pequeñas
+      margin-bottom: 40px!important;
+    }
+
+    ul {
+      li {
+        font-size: 1.1rem!important; // Reduce el tamaño de la fuente de los elementos de la lista
+        line-height: 1.8rem; // Ajusta el interlineado en móvil
+        margin-bottom: 10px!important;;
+      }
     }
   }
 }
