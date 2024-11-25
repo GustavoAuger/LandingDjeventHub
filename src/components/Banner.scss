@@ -1,0 +1,88 @@
+.banner {
+  background-image: url('../assets/images/Banner.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+
+  .banner-content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para resaltar el texto */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #1e90ff; /* Resalta el título */
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .banner-button {
+      padding: 15px 30px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #005bbb;
+      }
+    }
+  }
+
+  // Media Query para pantallas pequeñas (móviles)
+  @media (max-width: 768px) {
+    height: 50vh; // Reduce un poco la altura en dispositivos móviles
+
+    .banner-content {
+      padding: 20px;
+      max-width: 100%; // Asegura que ocupe todo el ancho en móviles
+
+      h1 {
+        font-size: 2rem; // Reduce el tamaño del título en móviles
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 1rem; // Reduce el tamaño del texto en móviles
+        margin-bottom: 20px;
+      }
+
+      .banner-button {
+        padding: 10px 20px; // Ajusta el botón para móviles
+      }
+    }
+  }
+
+  // Media Query para pantallas medianas (tablets)
+  @media (min-width: 769px) and (max-width: 1024px) {
+    height: 55vh;
+
+    .banner-content {
+      padding: 30px;
+      max-width: 90%;
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Section from './components/Section';
+import Banner from './components/Banner';
 import Features from './components/Features';
+import PreFooter from './components/PreFooter';
 import Footer from './components/Footer';
+
+
+
 import './components/App.scss';
 
 // Importa las imágenes desde la carpeta assets
@@ -92,7 +97,9 @@ function App() {
           text={section.text} // Texto dinámico
         />
       ))}
+      <Banner />
       <Features />
+      <PreFooter />
       <Footer />
     </div>
   );

@@ -1,0 +1,60 @@
+.pre-footer {
+  background-image: url('../assets/images/pre-footer-background.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+
+  .pre-footer-content {
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para resaltar el texto */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #1e90ff; /* Un toque de color para el título */
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .subscription-form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      input[type="email"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        width: 60%;
+        max-width: 300px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #1e90ff;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #005bbb;
+        }
+      }
+    }
+  }
+}

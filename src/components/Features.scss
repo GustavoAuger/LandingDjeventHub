@@ -1,0 +1,21 @@
+
+
+.gradient2 {
+    background: linear-gradient(to bottom, #3f4ae0, #000000);
+    position: relative;
+    display: flex; /* Flexbox para alinear imagen y texto */
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+  
+
+
+  // Responsividad para pantallas pequeñas
+  @media (max-width: 768px) {
+    .section-content {
+      flex-direction: column;
+    }
+  }
+}
