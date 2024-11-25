@@ -38,7 +38,7 @@
   // Responsividad para pantallas pequeñas (móviles)
   @media (max-width: 768px) {
     height: 40vh !important;  /* Ajusta la altura en móviles */
-    padding-top: 250px;  /* Ajusta el padding-top para una mejor visualización en móvil */
+
 
     .functionalities {
       &.web {
@@ -50,8 +50,10 @@
   // En pantallas grandes, ocultar el botón y mostrar el QR
   @media (min-width: 769px) {
     .functionalities {
+
       &.mobile {
         display: none;
+        margin-top: 40%;
       }
     }
   }
