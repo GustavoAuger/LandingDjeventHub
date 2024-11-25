@@ -38,8 +38,10 @@
   // Responsividad para pantallas pequeñas (móviles)
   @media (max-width: 768px) {
     height: 40vh !important;  /* Ajusta la altura en móviles */
-
-
+    
+    .hero-content {
+      margin-top: 40%!important;
+    }
     .functionalities {
       &.web {
         display: none;
@@ -50,10 +52,9 @@
   // En pantallas grandes, ocultar el botón y mostrar el QR
   @media (min-width: 769px) {
     .functionalities {
-
+      
       &.mobile {
         display: none;
-        margin-top: 40%;
       }
     }
   }
